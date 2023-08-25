@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+ 
+<head>
+  <meta charset="utf-8">
+  <title>CALCULATOR</title>
+  <style>
+    .calculator {
+    padding: 5px;
+    border-radius: 1em;
+    height: 100px;
+    width: 200px;
+    margin: auto;
+    background-color: #0424f7;
+    box-shadow: rgba(252, 2, 2, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+}
+
+.display-box {
+    font-family: 'Orbitron', sans-serif;
+    font-size: large;
+    background-color: yellow;
+    border: solid black 0.5px;
+    color: rgb(0, 0, 0);
+    border-radius: 10px;
+    width: 95%;
+    height: 65%;
+}
+
+#btn {
+    background-color: red;
+}
+
+input[type=button] {
+    font-family: 'Orbitron', sans-serif;
+    font-size: large;
+    background-color: pink;
+    color: rgb(8, 6, 6);
+    border: solid black 4px;
+    width: 100%;
+    border-radius: 10px;
+    height: 70%;
+    outline: none;
+}
+
+input:active[type=button] {
+    background: #e5e5e5;
+    -webkit-box-shadow: inset 0px 0px 5px #c1c1c1;
+    -moz-box-shadow: inset 0px 0px 5px #c1c1c1;
+    box-shadow: inset 0px 0px 5px #c1c1c1;
+}
+  </style>
+  <script>
+    function clearScreen() {
+    document.getElementById("result").value = "";
+}
+ 
+
+function display(value) {
+    document.getElementById("result").value += value;
+}
+ 
+
+function calculate() {
+    var p = document.getElementById("result").value;
+    var q = eval(p);
+    document.getElementById("result").value = q;
+}
+  </script>
+</head>
+ 
+<body style="background-image: url(data:image/jpeg;base64,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);"></body>
+ <CENTER><h2 style="border: 6PX SOLID black;border-radius: 10PX;background-color: yellow;width: 38%;height: 60PX;margin-top: 30PX;"><b style="margin-top: 30px;">WELCOME TO MY CALCULATOR</b></h2></CENTER>
+<table class="calculator" style="margin-top: 6px;height: 400px;width: 480px; border: 6PX solid black;" >
+  <tr>
+   <td colspan="3"> <input class="display-box" type="text" id="result" disabled style="border: 4PX solid BLACK;"> </td>
+    <br>
+ 
+    <!-- clearScreen() function clears all the values -->
+    <td> <input type="button" value="C" onclick="clearScreen()" id="btn" /> </td>
+  </tr>
+  <tr>
+    <!-- display() function displays the value of clicked button -->
+    <td> <input type="button" value="1" onclick="display('1')" /> </td>
+    <td> <input type="button" value="2" onclick="display('2')" /> </td>
+    <td> <input type="button" value="3" onclick="display('3')" /> </td>
+    <td> <input type="button" value="/" onclick="display('/')" /> </td>
+  </tr>
+  <tr>
+    <td> <input type="button" value="4" onclick="display('4')" /> </td>
+    <td> <input type="button" value="5" onclick="display('5')" /> </td>
+    <td> <input type="button" value="6" onclick="display('6')" /> </td>
+    <td> <input type="button" value="-" onclick="display('-')" /> </td>
+  </tr>
+  <tr>
+    <td> <input type="button" value="7" onclick="display('7')" /> </td>
+    <td> <input type="button" value="8" onclick="display('8')" /> </td>
+    <td> <input type="button" value="9" onclick="display('9')" /> </td>
+    <td> <input type="button" value="+" onclick="display('+')" /> </td>
+  </tr>
+  <tr>
+    <td> <input type="button" value="." onclick="display('.')" /> </td>
+    <td> <input type="button" value="0" onclick="display('0')" /> </td>
+ 
+    <!-- calculate() function evaluates the mathematical expression -->
+    <td> <input type="button" value="=" onclick="calculate()" id="btn" /> </td>
+    <td> <input type="button" value="" onclick="display('')" /> </td>
+  </tr>
+</table>
+ 
+<script type="text/javascript" src="script.js"></script>
+ 
+</body>
+ 
+</html>
